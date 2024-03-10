@@ -5,6 +5,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background: black;
 }
 
 .description {
@@ -16,6 +17,15 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+}
+.owner{
+  color: white;
+  text-decoration: underline;
+    font-weight: 500;
+    font-size: 20px;
+}
+.header {
+  background: cadetblue !important;
 }
 
 .description a {

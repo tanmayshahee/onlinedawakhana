@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>Welcome to Online Dawakhana !!!!!</p>
+        <p className={styles.header}>Welcome to Online Dawakhana !!!!!</p>
       </div>
       <Image
         src={
@@ -15,7 +15,7 @@ export default function Home() {
         height={400}
         width={400}
       ></Image>
-      <div>By Dr Drashti Shah</div>
+      <div className={styles.owner}>By Dr Drashti Shah</div>
     </main>
   );
 }
