@@ -1,0 +1,26 @@
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  z-index: 1000;
+  }
+  
+  .header .logo {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav {
+    margin-top: 10px;
+  }
+  
+  .nav .nav-link {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  

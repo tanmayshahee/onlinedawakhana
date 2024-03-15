@@ -1,0 +1,15 @@
+.whatsappIcon {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 100%;
+    padding: 10px;
+  }
+  
+  .whatsappIcon img {
+    width: 50px;
+    height: 50px;
+  }

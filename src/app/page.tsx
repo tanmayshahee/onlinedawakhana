@@ -1,21 +1,87 @@
+// pages/index.js
+
+import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import styles from './page.module.scss';
 import Image from 'next/image';
-import styles from './page.module.css';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p className={styles.header}>Welcome to Online Dawakhana !!!!!</p>
+    <>
+      <Header></Header>
+      <div className={styles.container}>
+        <Head>
+          <title>Online Dawakhana</title>
+          <meta
+            name='description'
+            content='Homeopathic Clinic | Online Dawakhana'
+          />
+          <link rel='icon' href='/favicon.ico' />
+        </Head>
+
+        <main className={styles.main}>
+          <h1 className={styles.title}>Welcome to Our Homeopathic Clinic</h1>
+
+          <p className={styles.description}>
+            We offer personalized homeopathic treatments to promote natural
+            healing and well-being.
+          </p>
+
+          {/* Image section */}
+          <div className={styles.imageContainer}>
+            <Image
+              src='https://assets.toothsi.in/homeopathy_5c204a7ee4.png'
+              alt='Homeopathy vs Allopathy'
+              className={styles.image}
+              width={200}
+              height={200}
+            />
+          </div>
+
+          {/* Comparison section */}
+          <section className={styles.comparison}>
+            <h2>Comparison: Homeopathy vs. Allopathy</h2>
+            <div className={styles.tableContainer}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th>Advantages of Homeopathic Treatment</th>
+                    <th>Advantages of Allopathic Treatment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Natural healing process</td>
+                    <td>Fast symptom relief</td>
+                  </tr>
+                  <tr>
+                    <td>Individualized treatment plans</td>
+                    <td>Effective for acute conditions</td>
+                  </tr>
+                  <tr>
+                    <td>Minimal side effects</td>
+                    <td>Advanced diagnostic tools</td>
+                  </tr>
+                  <tr>
+                    <td>Treats underlying causes</td>
+                    <td>Emergency care</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              While allopathy focuses on suppressing symptoms, homeopathy aims
+              to stimulate the body's natural healing abilities.
+            </p>
+          </section>
+        </main>
       </div>
-      <Image
-        src={
-          'https://assets.toothsi.in/c_H_Jpdm_F0_ZS_9sci9pb_W_Fn_ZX_Mvd2_Vic2l0_ZS_8y_MD_Iy_LTA_4_L3_Jt_NTU_4_LW_Vs_ZW_1lbn_Rz_L_Xdvcm_Qt_MD_Ete_C5qc_Gc_b0cdf33d0c.webp'
-        }
-        alt='coming soon'
-        height={400}
-        width={400}
-      ></Image>
-      <div className={styles.owner}>By Dr Drashti Shah</div>
-    </main>
+
+      <WhatsAppIcon></WhatsAppIcon>
+
+      <Footer></Footer>
+    </>
   );
 }
