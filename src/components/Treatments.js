@@ -1,10 +1,12 @@
 import Image from "next/image";
-import treatment1 from "../../public/hero-image.jpg"; // Replace with actual images
+import hairLoss from "../../public/hair-loss-issue.jpeg";
+import skinIssue from "../../public/skin-issue.jpeg";
+import respiratoryIssue from "../../public/respiratory-issue.jpeg";
 
 const treatments = [
-  { name: "Skin Conditions", image: treatment1 },
-  { name: "Respiratory Issues", image: treatment1 },
-  { name: "Hair Loss", image: treatment1 },
+  { name: "Skin Conditions", image: skinIssue },
+  { name: "Respiratory Issues", image: respiratoryIssue },
+  { name: "Hair Loss", image: hairLoss },
 ];
 
 export default function Treatments() {
