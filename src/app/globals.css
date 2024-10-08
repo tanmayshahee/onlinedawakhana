@@ -16,3 +16,7 @@ html {
 .calendly-popup-content {
   height: 100vh;
 }
+
+.bg-gradient {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 1) 0%, rgba(37, 99, 235, 1) 100%);
+}

@@ -1,31 +1,30 @@
-import Image from "next/image";
-import heroImage from "../../public/hero-image.jpg"; // Image placeholder
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col lg:flex-row items-center py-10 bg-gray-100">
-      <div className="lg:w-1/2 px-5 text-center lg:text-left">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Here Good Health Comes Naturally
-        </h2>
-        <p className="text-lg mb-6">
-          Explore our treatments for natural health and wellness. Book an
-          appointment today!
-        </p>
-        <a
+    <section
+      className="relative h-screen flex items-center justify-center bg-cover bg-fixed"
+      style={{ backgroundImage: 'url("/hero-image.jpg")' }}
+    >
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      <motion.div
+        className="text-center text-white z-10"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-5xl font-bold">Here Good Health Comes Naturally</h1>
+        <p className="mt-4 text-xl">Book your appointment with us today</p>
+        <motion.a
           href="#book"
-          className="bg-green-500 text-white px-6 py-2 rounded-lg"
+          className="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-lg"
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
         >
-          Book Appointment
-        </a>
-      </div>
-      <div className="lg:w-1/2 mt-6 lg:mt-0">
-        <Image
-          src={heroImage}
-          alt="Natural Health"
-          className="rounded-lg w-full h-auto"
-        />
-      </div>
+          Book Now
+        </motion.a>
+      </motion.div>
     </section>
   );
 }

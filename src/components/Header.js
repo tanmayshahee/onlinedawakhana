@@ -1,43 +1,80 @@
-import Link from "next/link";
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="bg-green-500 p-5">
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-        <h1 className="text-xl font-bold text-white mb-4 sm:mb-0">
-          Online Dawakhana
-        </h1>
-        <nav>
-          <ul className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <li>
-              <Link href="/" className="text-white">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#treatments" className="text-white">
-                Treatments
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className="text-white">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="text-white">
-                Contact
-              </Link>
-            </li>
+    <header className="bg-gradient-to-r from-green-400 to-blue-500 p-5">
+      <motion.div
+        className="container mx-auto flex justify-between items-center"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Logo / Title */}
+        <motion.h1
+          className="text-2xl font-bold text-white"
+          whileHover={{ scale: 1.1 }}
+        >
+          Arinjai Clinic
+        </motion.h1>
+
+        {/* Burger Menu Icon */}
+        <motion.button
+          className="text-white block md:hidden focus:outline-none"
+          onClick={toggleMenu}
+          whileHover={{ rotate: 90 }}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </motion.button>
+
+        {/* Navigation Menu */}
+        <motion.nav
+          className={`md:flex ${isOpen ? "block" : "hidden"}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isOpen ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            {["Treatments", "About", "Contact"].map((item, index) => (
+              <motion.li
+                key={index}
+                whileHover={{ scale: 1.2 }}
+                className="text-white cursor-pointer"
+              >
+                <a href={`#${item.toLowerCase()}`}>{item}</a>
+              </motion.li>
+            ))}
           </ul>
-        </nav>
-        <a
+        </motion.nav>
+
+        <motion.a
           href="#book"
-          className="bg-white text-green-500 px-4 py-2 mt-4 sm:mt-0 rounded-lg"
+          className="bg-white text-green-500 px-4 py-2 rounded-lg hidden md:block"
+          whileHover={{ scale: 1.1 }}
         >
           Book Appointment
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
     </header>
   );
 }
