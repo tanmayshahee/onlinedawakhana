@@ -22,6 +22,7 @@ export default function Treatments() {
       whileInView={{ opacity: 1, scale: 1 }}
       initial={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5 }}
+      id="treatments"
     >
       <h2 className="text-4xl font-bold text-center">Our Treatments</h2>
       <p className="mt-4 text-center text-lg">
